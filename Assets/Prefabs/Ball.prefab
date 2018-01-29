@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4051381076677762}
   - component: {fileID: 212454958176143622}
   - component: {fileID: 58835636975520408}
+  - component: {fileID: 50727749452275634}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -41,6 +42,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50727749452275634
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1553265651433672}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 74d2f844628333e4db5c0ec23323e1cc, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58835636975520408
 CircleCollider2D:
   m_ObjectHideFlags: 1

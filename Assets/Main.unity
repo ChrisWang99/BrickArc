@@ -435,7 +435,7 @@ TrailRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 0.78431374}
+      key0: {r: 0.4705882, g: 0.9123732, b: 1, a: 0.78431374}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -600,6 +600,21 @@ Prefab:
     - target: {fileID: 4051381076677762, guid: 11564463a19dd1348aa3ed684d581794, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 212454958176143622, guid: 11564463a19dd1348aa3ed684d581794,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.4705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 212454958176143622, guid: 11564463a19dd1348aa3ed684d581794,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.9123732
+      objectReference: {fileID: 0}
+    - target: {fileID: 212454958176143622, guid: 11564463a19dd1348aa3ed684d581794,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11564463a19dd1348aa3ed684d581794, type: 2}

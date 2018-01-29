@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class BrickBase : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private float ballVelocityNormal;
+    public float ballVelocityReturnStep = 0.1f;
+
+    protected virtual void Start()
+    {
+        ballVelocityNormal = 1;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ball")
         {
+            Rigidbody2D ballRigidbody2D = collision.gameObject.GetComponent<Rigidbody2D>();
+            Vector2 ballVelocity = ballRigidbody2D.velocity;
+            if (Mathf.Abs(ballVelocity.magnitude - ballVelocityNormal) <= ballVelocityReturnStep)
+                ballRigidbody2D.velocity = ballVelocity.normalized * ballVelocityNormal;
+            else if (ballVelocity.magnitude > ballVelocityNormal)
+                ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude - ballVelocityReturnStep);
+            else if(ballVelocity.magnitude < ballVelocityNormal)
+                ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude + ballVelocityReturnStep);
             BrickEffect();
-            Destroy(gameObject);
         }
     }
 
     protected virtual void BrickEffect()
     {
-
+        Destroy(gameObject);
     }
 }

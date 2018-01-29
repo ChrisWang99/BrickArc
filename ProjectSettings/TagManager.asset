@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BrickOrdinary
   - Ball
+  - Attract
   layers:
   - Default
   - TransparentFX

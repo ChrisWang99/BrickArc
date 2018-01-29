@@ -9,13 +9,14 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(Random.value, Random.value) * 4, ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(Random.value + 1.0f, Random.value + 1.0f) * 2, ForceMode2D.Impulse);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (!rb.IsTouching(MapArea)) {
             Debug.Log("Player Died!");
+            Destroy(gameObject);
         }
 	}
 }

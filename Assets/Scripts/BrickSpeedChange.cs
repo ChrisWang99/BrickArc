@@ -16,8 +16,8 @@ public class BrickSpeedChange : BrickBase
         GetComponent<Collider2D>().sharedMaterial = physicsMaterial2D;
     }
 
-    protected override void BrickEffect()
+    protected override void BrickEffect(GameObject ball)
     {
-        base.BrickEffect();
+        base.BrickEffect(ball);
     }
 }

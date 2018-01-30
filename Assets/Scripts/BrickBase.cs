@@ -26,7 +26,7 @@ public class BrickBase : MonoBehaviour {
             else if(ballVelocity.magnitude < ballVelocityNormal)
                 ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude + ballVelocityReturnStep);
             Debug.Log("ballVelocity2: " + ballRigidbody2D.velocity.ToString() + " " + ballRigidbody2D.velocity.magnitude.ToString());
-            BrickEffect();
+            BrickEffect(collision.gameObject);
         }
     }
 
@@ -35,7 +35,7 @@ public class BrickBase : MonoBehaviour {
         Destroy(transform.parent.gameObject);
     }
 
-    protected virtual void BrickEffect()
+    protected virtual void BrickEffect(GameObject ball)
     {
         Destroy(gameObject);
     }

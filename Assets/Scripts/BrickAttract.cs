@@ -11,15 +11,17 @@ public class BrickAttract : BrickBase
     protected override void Start()
     {
         base.Start();
-        attract = Instantiate(attractPrefab);
+        attract = Instantiate(attractPrefab, transform);
         attract.transform.SetParent(transform.root);
         attract.transform.localScale = new Vector3(attractR, attractR, attractR);
         attract.transform.SetParent(transform);
     }
 
-    protected override void BrickEffect()
+    protected override void BrickEffect(GameObject ball)
     {
+        float newMagnitude = Mathf.Log(ball.GetComponent<Rigidbody2D>().velocity.magnitude - 2) + 3;
+        ball.GetComponent<Rigidbody2D>().velocity = ball.GetComponent<Rigidbody2D>().velocity.normalized * newMagnitude;
         Destroy(attract);
-        base.BrickEffect();
+        base.BrickEffect(ball);
     }
 }

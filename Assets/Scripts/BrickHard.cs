@@ -14,12 +14,12 @@ public class BrickHard : BrickBase
         GetComponent<MeshRenderer>().material = materials[life - 1];
     }
 
-    protected override void BrickEffect()
+    protected override void BrickEffect(GameObject ball)
     {
         life--;
         if (life > 0)
             GetComponent<MeshRenderer>().material = materials[life - 1];
         else
-            base.BrickEffect();
+            base.BrickEffect(ball);
     }
 }

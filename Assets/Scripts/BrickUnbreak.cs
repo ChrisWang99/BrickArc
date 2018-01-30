@@ -4,7 +4,7 @@ using System.Collections;
 public class BrickUnbreak : BrickBase
 {
 
-    protected override void BrickEffect()
+    protected override void BrickEffect(GameObject ball)
     {
 
     }

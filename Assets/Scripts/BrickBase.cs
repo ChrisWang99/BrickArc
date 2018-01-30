@@ -30,6 +30,11 @@ public class BrickBase : MonoBehaviour {
         }
     }
 
+    private void OnDestroy()
+    {
+        Destroy(transform.parent.gameObject);
+    }
+
     protected virtual void BrickEffect()
     {
         Destroy(gameObject);

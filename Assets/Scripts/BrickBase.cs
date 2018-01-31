@@ -18,14 +18,14 @@ public class BrickBase : MonoBehaviour {
         {
             Rigidbody2D ballRigidbody2D = collision.gameObject.GetComponent<Rigidbody2D>();
             Vector2 ballVelocity = ballRigidbody2D.velocity;
-            Debug.Log("ballVelocity1: "+ ballRigidbody2D.velocity.ToString()+" "+ ballRigidbody2D.velocity.magnitude.ToString());
+            //Debug.Log("ballVelocity1: "+ ballRigidbody2D.velocity.ToString()+" "+ ballRigidbody2D.velocity.magnitude.ToString());
             if (Mathf.Abs(ballVelocity.magnitude - ballVelocityNormal) <= ballVelocityReturnStep)
                 ballRigidbody2D.velocity = ballVelocity.normalized * ballVelocityNormal;
             else if (ballVelocity.magnitude > ballVelocityNormal)
                 ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude - ballVelocityReturnStep);
             else if(ballVelocity.magnitude < ballVelocityNormal)
                 ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude + ballVelocityReturnStep);
-            Debug.Log("ballVelocity2: " + ballRigidbody2D.velocity.ToString() + " " + ballRigidbody2D.velocity.magnitude.ToString());
+            //Debug.Log("ballVelocity2: " + ballRigidbody2D.velocity.ToString() + " " + ballRigidbody2D.velocity.magnitude.ToString());
             BrickEffect(collision.gameObject);
         }
     }
@@ -37,6 +37,7 @@ public class BrickBase : MonoBehaviour {
 
     protected virtual void BrickEffect(GameObject ball)
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().BrickNumberReduce();
         Destroy(gameObject);
     }
 }

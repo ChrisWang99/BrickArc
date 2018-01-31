@@ -110,7 +110,7 @@ public class GameController : MonoBehaviour
         if (level > levelMaps.Length)
             gameText.text = "恭喜你闯过了最后一关!\n摁任意键重新游戏\nEsc键退出";
         else
-            gameText.text = "你死在了第 " + level.ToString() + "关\n摁任意键重新游戏\nEsc键退出";
+            gameText.text = "你死在了第 " + level.ToString() + " 关\n摁任意键重新游戏\nEsc键退出";
         levelDescriptionText.text = "";
         gameState = false;
     }

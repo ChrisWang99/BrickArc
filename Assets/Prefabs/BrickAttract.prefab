@@ -110,7 +110,7 @@ MonoBehaviour:
   ballVelocityReturnStep: 0.1
   attractPrefab: {fileID: 1552134339993066, guid: 9d819e5a5e1e3ce4b8abc0bab962b4db,
     type: 2}
-  attractR: 10
+  attractR: 2.5
 --- !u!212 &212455847148931094
 SpriteRenderer:
   m_ObjectHideFlags: 1

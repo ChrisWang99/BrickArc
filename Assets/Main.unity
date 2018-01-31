@@ -149,7 +149,7 @@ MonoBehaviour:
   levelMaps:
   - {fileID: 1231451281332052, guid: 5ac98c24205bbf842b64002f7d26d5ed, type: 2}
   - {fileID: 1516871093830604, guid: 1a51356e6801e364e8e6f11ceb5608f8, type: 2}
-  levelMapsBrickN: 0a00000022000000
+  levelMapsBrickN: 1400000022000000
 --- !u!4 &60972551
 Transform:
   m_ObjectHideFlags: 0
@@ -335,12 +335,12 @@ GameObject:
   - component: {fileID: 168590804}
   - component: {fileID: 168590803}
   m_Layer: 0
-  m_Name: BrickMapSize
+  m_Name: BrickMapMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &168590803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &724715510
 Transform:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 998827621}
   - component: {fileID: 998827620}
   m_Layer: 0
-  m_Name: TotalMapSize
+  m_Name: TotalMapMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

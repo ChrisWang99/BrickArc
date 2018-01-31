@@ -183,8 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f891e924b3eb9f44187da9d41af07b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapArea: {fileID: 0}
   attractForce: 4
+  speed: 8
+  active: 0
 --- !u!212 &212454958176143622
 SpriteRenderer:
   m_ObjectHideFlags: 1

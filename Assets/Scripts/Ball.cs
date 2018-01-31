@@ -6,13 +6,13 @@ public class Ball : MonoBehaviour {
     private Rigidbody2D rb;
 
     public float attractForce = 10.0f;
-
+    public float speed = 3.0f;
     public bool active;
 
     // Use this for initialization
     public void Start () {
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(Random.value + 1.0f, Random.value + 1.0f) * 2, ForceMode2D.Impulse);
+        rb.velocity = Random.onUnitSphere * speed;
 
         active = true;
 

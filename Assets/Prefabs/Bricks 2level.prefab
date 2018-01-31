@@ -4774,7 +4774,7 @@ MonoBehaviour:
   ballVelocityReturnStep: 0.1
   attractPrefab: {fileID: 1552134339993066, guid: 9d819e5a5e1e3ce4b8abc0bab962b4db,
     type: 2}
-  attractR: 2
+  attractR: 3
 --- !u!114 &114644271776347788
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -149,7 +149,8 @@ MonoBehaviour:
   levelMaps:
   - {fileID: 1231451281332052, guid: 5ac98c24205bbf842b64002f7d26d5ed, type: 2}
   - {fileID: 1516871093830604, guid: 1a51356e6801e364e8e6f11ceb5608f8, type: 2}
-  levelMapsBrickN: 1400000022000000
+  - {fileID: 1164449598573670, guid: 485565d9e5f08944c9318391d85b7f0d, type: 2}
+  levelMapsBrickN: 01000000010000001c000000
 --- !u!4 &60972551
 Transform:
   m_ObjectHideFlags: 0
@@ -755,7 +756,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1000, y: 1000}
-  m_ScreenMatchMode: 2
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

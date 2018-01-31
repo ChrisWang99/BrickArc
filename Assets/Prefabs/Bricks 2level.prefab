@@ -1413,7 +1413,7 @@ Transform:
   m_GameObject: {fileID: 1183956463768606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4963379647269174}
   m_RootOrder: 0
@@ -1439,7 +1439,7 @@ Transform:
   m_GameObject: {fileID: 1121843216494226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4765238821786768}
   m_RootOrder: 0
@@ -1722,7 +1722,7 @@ Transform:
   m_GameObject: {fileID: 1979699955289856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4416965516116726}
   m_RootOrder: 0
@@ -1869,7 +1869,7 @@ Transform:
   m_GameObject: {fileID: 1635273577125312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4054935832914630}
   m_RootOrder: 0
@@ -4468,7 +4468,7 @@ MonoBehaviour:
   ballVelocityReturnStep: 0.1
   attractPrefab: {fileID: 1552134339993066, guid: 9d819e5a5e1e3ce4b8abc0bab962b4db,
     type: 2}
-  attractR: 2.5
+  attractR: 1.5
 --- !u!114 &114281120261075150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4591,7 +4591,7 @@ MonoBehaviour:
   ballVelocityReturnStep: 0.1
   attractPrefab: {fileID: 1552134339993066, guid: 9d819e5a5e1e3ce4b8abc0bab962b4db,
     type: 2}
-  attractR: 2.5
+  attractR: 1.5
 --- !u!114 &114644271776347788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4642,7 +4642,7 @@ MonoBehaviour:
   ballVelocityReturnStep: 0.1
   attractPrefab: {fileID: 1552134339993066, guid: 9d819e5a5e1e3ce4b8abc0bab962b4db,
     type: 2}
-  attractR: 2.5
+  attractR: 1.5
 --- !u!114 &114678998572664942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4705,7 +4705,7 @@ MonoBehaviour:
   ballVelocityReturnStep: 0.1
   attractPrefab: {fileID: 1552134339993066, guid: 9d819e5a5e1e3ce4b8abc0bab962b4db,
     type: 2}
-  attractR: 2.5
+  attractR: 1.5
 --- !u!114 &114903192150948306
 MonoBehaviour:
   m_ObjectHideFlags: 1

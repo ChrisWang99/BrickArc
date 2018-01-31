@@ -144,13 +144,14 @@ MonoBehaviour:
   levelDescriptionText: {fileID: 331745419}
   levelDescription:
   - "\u5176\u5B9E\u4E0D\u7528\u5168\u90E8\u6253\u5B8C\u5C31\u80FD\u8FDB\u4E0B\u4E00\u5173\u7684"
+  - "\u7B2C\u4E8C\u5173"
   - "\u6700\u540E\u4E00\u5173\u5566~"
   ballPrefab: {fileID: 1553265651433672, guid: 11564463a19dd1348aa3ed684d581794, type: 2}
   levelMaps:
   - {fileID: 1231451281332052, guid: 5ac98c24205bbf842b64002f7d26d5ed, type: 2}
   - {fileID: 1516871093830604, guid: 1a51356e6801e364e8e6f11ceb5608f8, type: 2}
   - {fileID: 1164449598573670, guid: 485565d9e5f08944c9318391d85b7f0d, type: 2}
-  levelMapsBrickN: 01000000010000001c000000
+  levelMapsBrickN: 28000000220000001c000000
 --- !u!4 &60972551
 Transform:
   m_ObjectHideFlags: 0

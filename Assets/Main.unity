@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: 1231451281332052, guid: 5ac98c24205bbf842b64002f7d26d5ed, type: 2}
   - {fileID: 1516871093830604, guid: 1a51356e6801e364e8e6f11ceb5608f8, type: 2}
   - {fileID: 1164449598573670, guid: 485565d9e5f08944c9318391d85b7f0d, type: 2}
-  levelMapsBrickN: 28000000220000001c000000
+  levelMapsBrickN: 14000000220000001c000000
 --- !u!4 &60972551
 Transform:
   m_ObjectHideFlags: 0

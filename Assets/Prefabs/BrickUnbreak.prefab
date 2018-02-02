@@ -150,3 +150,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocityReturnStep: 0.1
+  BreakParticle: {fileID: 1952599854944508, guid: c0da870059e41c748a5cfa68fe1407a7,
+    type: 2}

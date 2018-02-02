@@ -184,7 +184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractForce: 8
-  speed: 8
+  MaxSpeed: 6
+  MinSpeed: 3
+  InitialSpeed: 3
   active: 0
 --- !u!212 &212454958176143622
 SpriteRenderer:

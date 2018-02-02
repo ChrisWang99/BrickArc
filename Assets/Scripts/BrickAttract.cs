@@ -24,4 +24,9 @@ public class BrickAttract : BrickBase
         Destroy(attract);
         base.BrickEffect(ball);
     }
+
+    protected override void EmitBreakParticle() {
+        GameObject.FindGameObjectWithTag("ParticleManager").GetComponent<ParticleManager>().Emit(1, transform);
+    }
+
 }

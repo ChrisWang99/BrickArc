@@ -7,8 +7,6 @@ public class BrickBase : MonoBehaviour {
     private float ballVelocityNormal;
     public float ballVelocityReturnStep = 0.1f;
 
-    public GameObject BreakParticle;
-
     protected virtual void Start()
     {
         ballVelocityNormal = 3.0f;
@@ -35,12 +33,16 @@ public class BrickBase : MonoBehaviour {
     private void OnDestroy()
     {
         Destroy(transform.parent.gameObject);
+        EmitBreakParticle();
     }
 
     protected virtual void BrickEffect(GameObject ball)
     {
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().BrickNumberReduce();
         Destroy(gameObject);
-        Instantiate(BreakParticle, gameObject.transform);
+    }
+
+    protected virtual void EmitBreakParticle() {
+        GameObject.FindGameObjectWithTag("ParticleManager").GetComponent<ParticleManager>().Emit(0, transform);
     }
 }

@@ -9,4 +9,8 @@ public class ParticleManager : MonoBehaviour {
 	public void Emit(int index, Transform transform) {
         Instantiate(Particles[index], transform.position, transform.rotation);
     }
+
+    public void Emit(int index, Vector3 position, Quaternion rotation) {
+        Instantiate(Particles[index], position, rotation);
+    }
 }

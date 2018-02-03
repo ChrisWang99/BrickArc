@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class BrickBase : MonoBehaviour {
 
-    private float ballVelocityNormal;
-    public float ballVelocityReturnStep = 0.1f;
+    public float BallVelocityNormal = 3.0f;
+    public float BallVelocityReturnStep = 0.1f;
 
-    protected virtual void Start()
-    {
-        ballVelocityNormal = 3.0f;
+    protected virtual void Start() {
+        
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ball")
         {
             Rigidbody2D ballRigidbody2D = collision.gameObject.GetComponent<Rigidbody2D>();
             Vector2 ballVelocity = ballRigidbody2D.velocity;
             //Debug.Log("ballVelocity1: "+ ballRigidbody2D.velocity.ToString()+" "+ ballRigidbody2D.velocity.magnitude.ToString());
-            if (Mathf.Abs(ballVelocity.magnitude - ballVelocityNormal) <= ballVelocityReturnStep)
-                ballRigidbody2D.velocity = ballVelocity.normalized * ballVelocityNormal;
-            else if (ballVelocity.magnitude > ballVelocityNormal)
-                ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude - ballVelocityReturnStep);
-            else if(ballVelocity.magnitude < ballVelocityNormal)
-                ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude + ballVelocityReturnStep);
+            if (Mathf.Abs(ballVelocity.magnitude - BallVelocityNormal) <= BallVelocityReturnStep)
+                ballRigidbody2D.velocity = ballVelocity.normalized * BallVelocityNormal;
+            else if (ballVelocity.magnitude > BallVelocityNormal)
+                ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude - BallVelocityReturnStep);
+            else if(ballVelocity.magnitude < BallVelocityNormal)
+                ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude + BallVelocityReturnStep);
             //Debug.Log("ballVelocity2: " + ballRigidbody2D.velocity.ToString() + " " + ballRigidbody2D.velocity.magnitude.ToString());
             BrickEffect(collision.gameObject);
         }
@@ -32,8 +31,8 @@ public class BrickBase : MonoBehaviour {
 
     private void OnDestroy()
     {
-        Destroy(transform.parent.gameObject);
         EmitBreakParticle();
+        Destroy(transform.parent.gameObject);
     }
 
     protected virtual void BrickEffect(GameObject ball)

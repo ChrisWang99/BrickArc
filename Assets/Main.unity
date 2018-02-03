@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: 1231451281332052, guid: 5ac98c24205bbf842b64002f7d26d5ed, type: 2}
   - {fileID: 1516871093830604, guid: 1a51356e6801e364e8e6f11ceb5608f8, type: 2}
   - {fileID: 1164449598573670, guid: 485565d9e5f08944c9318391d85b7f0d, type: 2}
-  levelMapsBrickN: 14000000220000001c000000
+  levelMapsBrickN: 1e000000220000001c000000
 --- !u!4 &60972551
 Transform:
   m_ObjectHideFlags: 0
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 168310886}
   - component: {fileID: 168310887}
   m_Layer: 0
-  m_Name: ParticlePrefab
+  m_Name: ParticleManager
   m_TagString: ParticleManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,6 +434,7 @@ MonoBehaviour:
   Particles:
   - {fileID: 1952599854944508, guid: c0da870059e41c748a5cfa68fe1407a7, type: 2}
   - {fileID: 1952599854944508, guid: 52497460ae6c1ff49962ba9b38e2ecaf, type: 2}
+  - {fileID: 1862091677407912, guid: 2c5f8e0578dcce54d9bf8edb4ddd5ef1, type: 2}
 --- !u!1 &168590802
 GameObject:
   m_ObjectHideFlags: 0

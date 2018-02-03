@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ball : MonoBehaviour {
     private Rigidbody2D rb;
@@ -9,17 +7,15 @@ public class Ball : MonoBehaviour {
     public float MaxSpeed = 5.0f;
     public float MinSpeed = 3.0f;
     public float InitialSpeed = 3.0f;
-    public bool active;
+    public bool Active;
 
-    // Use this for initialization
     public void Start () {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = Random.onUnitSphere * InitialSpeed;
 
-        active = true;
+        Active = true;
     }
 	
-	// Update is called once per frame
 	void FixedUpdate () {
         if (rb.velocity.magnitude < MinSpeed)
             rb.velocity = rb.velocity.normalized * MinSpeed;
@@ -27,23 +23,31 @@ public class Ball : MonoBehaviour {
             rb.velocity = rb.velocity.normalized * MaxSpeed;
     }
     
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Attract")
         {
             Vector2 distance = collision.gameObject.transform.position - gameObject.transform.position;
             Vector2 force = attractForce * distance.normalized / (distance.magnitude * distance.magnitude);
-            //Debug.Log("force: " + force.ToString());
             rb.AddForce(force);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "MapArea" && active)
+        if (collision.gameObject.tag == "MapArea" && Active)
         {
             Debug.Log("Player Died!");
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().EndGame();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        foreach (ContactPoint2D contact in collision.contacts) {
+            Vector3 normal = contact.normal;
+            Quaternion quaternion = Quaternion.Euler(0, 0, Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg);
+            GameObject.FindGameObjectWithTag("ParticleManager").GetComponent<ParticleManager>().Emit(2, transform.position, quaternion);
+            break;
         }
     }
 }

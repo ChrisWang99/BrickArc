@@ -63,7 +63,6 @@ public class GameController : MonoBehaviour
     public void BrickNumberReduce()
     {
         brickN--;
-        Debug.Log(brickN.ToString());
     }
 
     bool EnterNextLevel()
@@ -74,7 +73,7 @@ public class GameController : MonoBehaviour
             return false;
         }
 
-        ball.GetComponent<Ball>().active = false;
+        ball.GetComponent<Ball>().Active = false;
         Destroy(ball);
         Destroy(levelMap);
 
@@ -108,7 +107,7 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
-        ball.GetComponent<Ball>().active = false;
+        ball.GetComponent<Ball>().Active = false;
         Destroy(ball);
         Destroy(levelMap);
         if (level > levelMaps.Length)

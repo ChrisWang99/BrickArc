@@ -22,7 +22,7 @@ public class BrickAttract : BrickBase
         float newMagnitude = Mathf.Log(ball.GetComponent<Rigidbody2D>().velocity.magnitude - 2) + 3;
         ball.GetComponent<Rigidbody2D>().velocity = ball.GetComponent<Rigidbody2D>().velocity.normalized * newMagnitude;
         Destroy(attract);
-        base.BrickEffect(ball);
+        DestroyBrick();
     }
 
     protected override void EmitBreakParticle() {

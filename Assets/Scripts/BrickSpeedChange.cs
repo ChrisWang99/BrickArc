@@ -15,9 +15,5 @@ public class BrickSpeedChange : BrickBase
         physicsMaterial2D.bounciness = bounciness;
         GetComponent<Collider2D>().sharedMaterial = physicsMaterial2D;
     }
-
-    protected override void BrickEffect(GameObject ball)
-    {
-        base.BrickEffect(ball);
-    }
+    
 }

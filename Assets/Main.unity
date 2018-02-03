@@ -532,7 +532,7 @@ MonoBehaviour:
   - {fileID: 1304736653}
   - {fileID: 407426261}
   - {fileID: 1889568775}
-  levelMapsBrickN: 14000000220000001c000000
+  levelMapsBrickN: 05000000050000001c000000
 --- !u!4 &60972551
 Transform:
   m_ObjectHideFlags: 0

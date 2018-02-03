@@ -4,44 +4,57 @@ using UnityEngine;
 
 public class BrickBase : MonoBehaviour {
 
-    public float BallVelocityNormal = 3.0f;
-    public float BallVelocityReturnStep = 0.1f;
+    private float ballVelocityNormal;
+    private float ballVelocityReturnStep;
 
-    protected virtual void Start() {
-        
+    protected virtual void Start()
+    {
+        ballVelocityNormal = 3.0f;
+        ballVelocityReturnStep = 0.1f;
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ball")
         {
-            Rigidbody2D ballRigidbody2D = collision.gameObject.GetComponent<Rigidbody2D>();
-            Vector2 ballVelocity = ballRigidbody2D.velocity;
-            //Debug.Log("ballVelocity1: "+ ballRigidbody2D.velocity.ToString()+" "+ ballRigidbody2D.velocity.magnitude.ToString());
-            if (Mathf.Abs(ballVelocity.magnitude - BallVelocityNormal) <= BallVelocityReturnStep)
-                ballRigidbody2D.velocity = ballVelocity.normalized * BallVelocityNormal;
-            else if (ballVelocity.magnitude > BallVelocityNormal)
-                ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude - BallVelocityReturnStep);
-            else if(ballVelocity.magnitude < BallVelocityNormal)
-                ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude + BallVelocityReturnStep);
-            //Debug.Log("ballVelocity2: " + ballRigidbody2D.velocity.ToString() + " " + ballRigidbody2D.velocity.magnitude.ToString());
+            SpeedAdjust(collision.gameObject);
             BrickEffect(collision.gameObject);
         }
     }
 
     private void OnDestroy()
     {
-        EmitBreakParticle();
         Destroy(transform.parent.gameObject);
     }
 
+    
     protected virtual void BrickEffect(GameObject ball)
     {
+        DestroyBrick();
+    }
+
+    protected void DestroyBrick()
+    {
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().BrickNumberReduce();
+        EmitBreakParticle();
         Destroy(gameObject);
     }
 
     protected virtual void EmitBreakParticle() {
         GameObject.FindGameObjectWithTag("ParticleManager").GetComponent<ParticleManager>().Emit(0, transform);
+    }
+
+    private void SpeedAdjust(GameObject ball)
+    {
+        Rigidbody2D ballRigidbody2D = ball.GetComponent<Rigidbody2D>();
+        Vector2 ballVelocity = ballRigidbody2D.velocity;
+        //Debug.Log("ballVelocity1: "+ ballRigidbody2D.velocity.ToString()+" "+ ballRigidbody2D.velocity.magnitude.ToString());
+        if (Mathf.Abs(ballVelocity.magnitude - ballVelocityNormal) <= ballVelocityReturnStep)
+            ballRigidbody2D.velocity = ballVelocity.normalized * ballVelocityNormal;
+        else if (ballVelocity.magnitude > ballVelocityNormal)
+            ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude - ballVelocityReturnStep);
+        else if (ballVelocity.magnitude < ballVelocityNormal)
+            ballRigidbody2D.velocity = ballVelocity.normalized * (ballVelocity.magnitude + ballVelocityReturnStep);
+        //Debug.Log("ballVelocity2: " + ballRigidbody2D.velocity.ToString() + " " + ballRigidbody2D.velocity.magnitude.ToString());
     }
 }

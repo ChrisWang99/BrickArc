@@ -143,7 +143,7 @@ public class GameController : MonoBehaviour
 
     void DestroyLevel()
     {
-        ball.GetComponent<Ball>().active = false;
+        ball.GetComponent<Ball>().Active = false;
         Destroy(ball);
         Destroy(levelMap);
     }

@@ -19,8 +19,7 @@ public class BrickAttract : BrickBase
 
     protected override void BrickEffect(GameObject ball)
     {
-        float newMagnitude = Mathf.Log(ball.GetComponent<Rigidbody2D>().velocity.magnitude - 2) + 3;
-        ball.GetComponent<Rigidbody2D>().velocity = ball.GetComponent<Rigidbody2D>().velocity.normalized * newMagnitude;
+        SpeedAdjust(ball);
         Destroy(attract);
         DestroyBrick();
     }
@@ -29,4 +28,9 @@ public class BrickAttract : BrickBase
         GameObject.FindGameObjectWithTag("ParticleManager").GetComponent<ParticleManager>().Emit(1, transform);
     }
 
+    private void SpeedAdjust(GameObject ball)
+    {
+        float newMagnitude = Mathf.Log(ball.GetComponent<Rigidbody2D>().velocity.magnitude - 2) + 3;
+        ball.GetComponent<Rigidbody2D>().velocity = ball.GetComponent<Rigidbody2D>().velocity.normalized * newMagnitude;
+    }
 }

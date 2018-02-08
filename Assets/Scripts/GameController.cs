@@ -147,4 +147,24 @@ public class GameController : MonoBehaviour
         Destroy(ball);
         Destroy(levelMap);
     }
+
+    // For Button
+    public void LoadLevel(int _level)
+    {
+        if (gameState)
+            DestroyLevel();
+
+        level = _level;
+        LoadLevel();
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ContinueGame()
+    {
+        Time.timeScale = 1;
+    }
 }

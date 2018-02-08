@@ -37,6 +37,7 @@ public class BrickBase : MonoBehaviour {
     {
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().BrickNumberReduce();
         EmitBreakParticle();
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().InstantiateAudio(0);
         Destroy(gameObject);
     }
 

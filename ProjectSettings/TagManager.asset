@@ -10,6 +10,7 @@ TagManager:
   - MapArea
   - Particle
   - ParticleManager
+  - AudioManager
   layers:
   - Default
   - TransparentFX

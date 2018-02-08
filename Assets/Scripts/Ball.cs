@@ -43,6 +43,9 @@ public class Ball : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        // 音效
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().InstantiateAutoAudio();
+
         foreach (ContactPoint2D contact in collision.contacts) {
             Vector3 normal = contact.normal;
             Quaternion quaternion = Quaternion.Euler(0, 0, Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg);
